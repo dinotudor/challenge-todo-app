@@ -22,6 +22,15 @@ class Todos {
     return this.todos.post("/todos", {title}).then(response => response.data);
   }
 
+  editOne(state) {
+    const {title} = state;
+    return this.todos.put('/todos/:id',{ title }).then(response => response.data);
+  }
+
+  deleteOne (id) {
+    return this.favorite.delete(`/todos/${id}`).then(response => response.data);
+  }
+
 
 }
 
