@@ -31,8 +31,8 @@ class EditTodo extends Component {
             <input
               type="text"
               name="title"
-              placeholder="todo"
-              value={this.username}
+              placeholder="add task"
+              value={this.title}
               onChange={this.handleChange}
             />
         </form>
