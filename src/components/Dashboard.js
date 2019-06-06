@@ -9,7 +9,7 @@ class Dashboard extends Component {
   componentDidMount(){
     console.log('DID MOUNT', this.state)
     todos.getAll()
-      .then((todos)=>this.setState({todos}))
+      .then(({todos})=>this.setState({todos}))
   }
 
   render() {

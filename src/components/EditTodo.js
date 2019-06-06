@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
+import todos from './../lib/todo-services'
 
 class EditTodo extends Component {
   state = {
     todos: []
   }
 
-  componentDidMount () {
-
+  componentDidMount (id) {
+    todos.getOne(id)
+      .then((todos)=> {
+        this.setState({todos})
+      })
   }
 
   handleFormSubmit = (e) => {
