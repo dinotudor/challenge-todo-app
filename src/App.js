@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Dashboard from './components/Dashboard';
-import EditTodo from './components/EditTodo';
+import AddTodo from './components/AddTodo';
 
 class App extends Component {
   render() {
@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
           <h1>TECH CHALLENGE</h1>
           <Dashboard />
-          <EditTodo />
+          <AddTodo />
       </div>
     );
   }

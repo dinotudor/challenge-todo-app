@@ -1,24 +1,35 @@
 import React, { Component } from 'react'
-import todos from './../lib/todo-services'
+import todosService from './../lib/todo-services'
 
 class Dashboard extends Component {
-  state = {
-    todos: []
-  }
+    state = {
+      todos: []
+}
+
+/*   addOne = () => {
+
+  } */
 
   componentDidMount(){
-    console.log('DID MOUNT', this.state)
-    todos.getAll()
-      .then(({todos})=>this.setState(todos))
+    todosService.getAll()
+    .then((todos)=>{
+    this.setState({todos})
+    })
   }
 
   render() {
-    const { title } = this.state;
-    console.log('TITLE' , title);
+    console.log('STATE',this.state.todos);
+    const { todos } = this.state;
+    console.log('TODOS', todos)
     return (
       <div>
-        <h1>DASHBOARD</h1>
-
+        { todos?
+            todos.map((todosObj) =>{
+                return <p key={todosObj._id}>{todosObj.title}</p>
+              })
+          :
+            <h1>Dont have todos</h1>
+        }
       </div>
     )
   }

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-class Todos {
+class TodosService {
   constructor() {
     this.todos = axios.create({
       baseURL: "http://localhost:4000/api/v1",
@@ -36,6 +36,6 @@ class Todos {
 
 
 
-const todos = new Todos();
+const todosService = new TodosService();
 
-export default todos;
+export default todosService;
